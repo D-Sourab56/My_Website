@@ -1,93 +1,79 @@
-# 💼 Indra Pokhrel - Portfolio
+# 🌐 Indra's Portfolio
 
-Welcome to my personal portfolio website! This project showcases my skills, certifications, projects, and experience as a Web & Application Development student in Japan.
+Welcome to my personal portfolio website! This project showcases my skills, projects, certifications, and experience as a Web Developer and IT student in Japan.
 
-## 🌐 Live Demo
+## 🚀 Live Demo
 
-👉 https://indra-d-portfolio.vercel.app/
-
----
-
-## 📖 About
-
-I'm **Indra Pokhrel**, a Web & Application Development student currently studying in Japan.
-
-I enjoy building responsive, modern web applications while continuously learning new technologies. My goal is to become a software engineer and contribute to innovative projects that make a positive impact.
+🔗 **Website:** https://indra-d-portfolio.vercel.app
 
 ---
 
-## 🚀 Features
 
-- Responsive modern design
-- Animated UI with Framer Motion
-- Interactive project showcase
-- Skills & technologies section
-- Experience & certifications timeline
-- Contact form using EmailJS
-- Mobile-friendly navigation
-- Smooth scrolling
-- Deployed with Vercel
+## 👨‍💻 About Me
+
+Hi, I'm **Indra Pokhrel**, a passionate Web Developer and IT student currently studying in Japan.
+
+I enjoy creating and continuously learning new technologies.
 
 ---
 
-## 🛠️ Built With
+## ✨ Features
+
+- 🎨 Modern UI/UX Design
+- 📱 Fully Responsive
+- ⚡ Smooth Animations with Framer Motion
+- 🖼️ Interactive Portfolio Layout
+- 📂 Projects Showcase
+- 💼 Skills & Technologies
+- 📞 Contact Section
+- 🌙 Dark Theme
+
+---
+
+## 🛠️ Tech Stack
 
 ### Frontend
 
 - React.js
 - Vite
 - Tailwind CSS
+- JavaScript (ES6+)
+
+### Animation
+
 - Framer Motion
+
+### Libraries
+
 - React Router DOM
-
-### Additional Libraries
-
-- EmailJS
 - React Parallax Tilt
-- React Vertical Timeline
-- React Icons
+- EmailJS
+- React Vertical Timeline Component
 
----
+### Deployment
 
-## 💻 Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- React
-- Tailwind CSS
-- Java
-- Node.js
-- MongoDB
-- Git
-- Docker
-- Figma
-
----
-
-## 🏆 Certifications
-
-- 🇯🇵 Japanese Language Proficiency Test (JLPT) N2
-- ☕ Oracle Certified Java Programmer, Bronze SE
-- 🇬🇧 TOEIC Listening & Reading – Score: 895
-- 💻 CompTIA Tech+
+- Vercel
 
 ---
 
 ## 📂 Project Structure
 
-```
-src/
+```text
+My_Website/
 │
-├── assets/
-├── components/
-├── constants/
-├── hoc/
-├── styles/
-├── utils/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── constants/
+│   ├── hoc/
+│   ├── utils/
+│   ├── App.jsx
+│   └── main.jsx
 │
-├── App.jsx
-├── main.jsx
+├── package.json
+├── vite.config.js
+└── README.md
 ```
 
 ---
@@ -97,13 +83,13 @@ src/
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/D-Sourab56/My_Website.git
 ```
 
-Go to the project folder
+Go into the project folder
 
 ```bash
-cd portfolio
+cd My_Website
 ```
 
 Install dependencies
@@ -112,7 +98,7 @@ Install dependencies
 npm install
 ```
 
-Run locally
+Start the development server
 
 ```bash
 npm run dev
@@ -124,36 +110,37 @@ Build for production
 npm run build
 ```
 
-Preview production build
+---
 
-```bash
-npm run preview
-```
+## 📚 Certifications
+
+- 🏅 JLPT N2
+- 🏅 TOEIC (895)
+- 🏅 Oracle Certified Java Programmer Bronze
+- 🏅 CompTIA Tech+
 
 ---
 
-## 📧 Contact
-
-**Indra Pokhrel**
-
-📍 Okinawa, Japan
+## 📬 Contact
 
 📧 Email: sourabpokhrel124@gmail.com
 
-GitHub:
-https://github.com/D-Sourab56
+🌐 Portfolio: https://indra-d-portfolio.vercel.app
 
-
----
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
+🐙 GitHub: https://github.com/D-Sourab56
 
 ---
 
 ## ⭐ Support
 
-If you like this project, please consider giving it a ⭐ on GitHub.
+If you like this project, please consider giving it a **⭐ Star** on GitHub.
 
-Thank you for visiting my portfolio!
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+Made with ❤️ by **Indra Pokhrel**
