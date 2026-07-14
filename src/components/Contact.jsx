@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
@@ -16,6 +16,10 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    console.log(import.meta.env);
+  }, []);
 
   const handleChange = (e) => {
     const { target } = e;
