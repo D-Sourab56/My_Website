@@ -11,24 +11,14 @@ import {
   redux,
   tailwind,
   nodejs,
-  mongodb,
   git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  cargame,
-  portfolio,
   threejs,
   jlpt,
   java,
   toiec,
-  itf
+  itf,
+  cargame,
+  portfolio,
 } from "../assets";
 
 export const navLinks = [
@@ -47,6 +37,10 @@ export const navLinks = [
   {
     id: "project",
     title: "Project",
+  },
+  {
+    id: "hobbies",
+    title:"Hobbies",
   },
   {
     id: "contact",
@@ -107,24 +101,12 @@ const technologies = [
     icon: nodejs,
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
     name: "Three JS",
     icon: threejs,
   },
   {
     name: "git",
     icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
   },
   {
     name:"jlpt",
@@ -142,7 +124,7 @@ const experiences = [
     points: [
       "Began learning the fundamentals of programming and web development.",
       "Studied HTML, CSS, and JavaScript while building small personal projects.",
-      "Developed a passion for creation.",
+      "Developed a passion for software development and problem-solving.",
     ],
   },
   {
@@ -206,7 +188,7 @@ const experiences = [
     ],
   },
   {
-    title: "Portfolio & Personal Projects",
+    title: "Personal Projects",
     company_name: "Continuous Learning",
     icon: web,
     iconBg: "#383E56",
@@ -219,13 +201,12 @@ const experiences = [
   },
 ];
 
-const testimonials = [];
 
 const projects = [
   {
     name: "2D Car Game",
     description:
-      "A 2D car game developed in Java featuring obstacle avoidance, scoring, and smooth keyboard controls.",
+      "A desktop-based 2D car racing game built with Java Swing featuring obstacle avoidance, score tracking, and responsive keyboard controls.",
     tags: [
       {
         name: "Java",
@@ -242,7 +223,7 @@ const projects = [
   {
     name: "Personal Portfolio",
     description:
-      "My personal portfolio website built with React, Tailwind CSS, Three.js, Framer Motion, and EmailJS.",
+      "A responsive personal portfolio website built with React, Tailwind CSS, Three.js, Framer Motion, and EmailJS to showcase my skills, certifications, and projects.",
     tags: [
       {
         name: "React",
@@ -261,5 +242,26 @@ const projects = [
     source_code_link: "https://github.com/D-Sourab56/My_Website",
   },
 ];
-
-export { services, technologies, experiences, testimonials, projects };
+const hobbies = [
+  {
+    title: "🏐 Volleyball",
+    description:
+      "I enjoy playing volleyball to stay active, improve teamwork, and strengthen communication skills.",
+  },
+  {
+    title: "🎬 Photo & Video Editing",
+    description:
+      "I enjoy editing photos and videos and designing posters, banners, and promotional content.",
+  },
+  {
+    title: "🎌 Anime",
+    description:
+      "I enjoy watching anime, especially One Piece and Haikyuu!!, which inspire perseverance, teamwork, and personal growth.",
+  },
+  {
+    title: "🎮 Gaming",
+    description:
+      "I enjoy playing games in my free time and exploring game mechanics, which also inspires my own development projects.",
+  },
+];
+export { services, technologies, experiences, projects, hobbies };

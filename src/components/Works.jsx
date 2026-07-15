@@ -1,4 +1,3 @@
-import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -17,12 +16,17 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.3, 0.75)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <Tilt
-        tiltMaxAngleX={45}
-        tiltMaxAngleY={45}
-        scale={1}
-        transitionSpeed={450}
+        tiltMaxAngleX={20}
+        tiltMaxAngleY={20}
+        scale={1.03}
+        transitionSpeed={400}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
@@ -32,35 +36,38 @@ const ProjectCard = ({
             className="w-full h-full object-cover rounded-2xl"
           />
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
+          <div className="absolute inset-0 flex justify-end m-3">
+            <button
               onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition"
             >
               <img
                 src={github}
                 alt="GitHub"
                 className="w-1/2 h-1/2 object-contain"
               />
-            </div>
+            </button>
           </div>
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">
+          <h3 className="text-white text-[24px] font-bold">
+            {name}
+          </h3>
+
+          <p className="mt-2 text-secondary text-[14px] leading-6">
             {description}
           </p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
+            <span
+              key={tag.name}
               className={`text-[14px] ${tag.color}`}
             >
               #{tag.name}
-            </p>
+            </span>
           ))}
         </div>
       </Tilt>
@@ -71,27 +78,38 @@ const ProjectCard = ({
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Here Are My</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+      <motion.div
+        variants={textVariant()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        <p className={styles.sectionSubText}>
+          My Recent Work
+        </p>
+
+        <h2 className={styles.sectionHeadText}>
+          Projects
+        </h2>
       </motion.div>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
-        >
-          The following projects showcase my skills and experience through
-          real-world applications. Each project demonstrates my ability to
-          develop practical solutions, work with modern technologies, and
-          continuously improve my software development skills.
-        </motion.p>
-      </div>
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="mt-4 max-w-3xl text-secondary text-[17px] leading-[30px]"
+      >
+        These projects demonstrate my ability to design and develop practical
+        applications using modern technologies. Each project reflects my
+        continuous learning, problem-solving skills, and passion for software
+        development.
+      </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-16 flex flex-wrap gap-7 justify-center">
         {projects.map((project, index) => (
           <ProjectCard
-            key={`project-${index}`}
+            key={project.name}
             index={index}
             {...project}
           />

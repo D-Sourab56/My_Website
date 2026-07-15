@@ -25,14 +25,6 @@ import threejs from "./tech/threejs.svg";
 import toiec from "./tech/toiec.jpg";
 import itf from "./tech/itf.jpg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
-
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 import cargame from "./cargame.png";
 import portfolio from "./portfolio.png";
 
@@ -62,13 +54,6 @@ export {
   threejs,
   toiec,
   itf,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
   cargame,
   portfolio,
 };
