@@ -31,6 +31,10 @@ export const navLinks = [
     title: "About",
   },
   {
+    id: "skills",
+    title: "Skills",
+  },
+  {
     id: "experiences",
     title: "Experiences",
   },
@@ -264,4 +268,65 @@ const hobbies = [
       "I enjoy playing games in my free time and exploring game mechanics, which also inspires my own development projects.",
   },
 ];
-export { services, technologies, experiences, projects, hobbies };
+const skillCategories = [
+  {
+    title: "💻 Frontend Development",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Tailwind CSS",
+      "Responsive Design",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "⚙️ Backend Development",
+    skills: [
+      "Node.js",
+      "REST APIs",
+    ],
+  },
+  {
+    title: "👨‍💻 Programming Languages",
+    skills: [
+      "Java",
+      "JavaScript",
+      "SQL",
+    ],
+  },
+  {
+    title: "🛠 Tools & Technologies",
+    skills: [
+      "GitHub",
+      "VS Code",
+      "EmailJS",
+      "Vercel",
+      "GIMP",
+      "ChatGPT",
+    ],
+  },
+  {
+    title: "🌏 Languages",
+    skills: [
+      "Nepali (Native)",
+      "Japanese (JLPT N2)",
+      "English (TOEIC 895)",
+      "Hindi (Fluent)",
+    ],
+  },
+  {
+    title: "🤝 Soft Skills",
+    skills: [
+      "Problem Solving",
+      "Communication",
+      "Teamwork",
+      "Adaptability",
+      "Continuous Learning",
+      "Time Management",
+    ],
+  },
+];
+export { services, technologies, experiences, projects, hobbies, skillCategories };

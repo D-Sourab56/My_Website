@@ -6,91 +6,145 @@ import { navLinks } from "../constants";
 import { close, logo, menu } from "../assets";
 
 const Navbar = () => {
-  const [active, setActive] = useState("Home");
+  const [active, setActive] = useState("home");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
+      setScrolled(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-35% 0px -55% 0px",
+        threshold: 0,
+      }
+    );
+
+    navLinks.forEach((nav) => {
+      const section = document.getElementById(nav.id);
+
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+      className={`${styles.paddingX} fixed top-0 z-20 w-full transition-all duration-300 ${
+        scrolled
+          ? "bg-primary/95 backdrop-blur-md shadow-lg py-4"
+          : "bg-transparent py-5"
       }`}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+
+        {/* Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
           onClick={() => {
-            setActive("Home");
-            window.scrollTo(0, 0);
+            setActive("home");
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
           }}
         >
           <img
             src={logo}
-            alt="Indra Logo"
-            className="w-15 h-9 object-contain"
+            alt="logo"
+            className="w-28 object-contain"
           />
 
-          <p className="text-white text-[18px] font-bold cursor-pointer">
-            Indra
-          </p>
+          <div className="leading-tight">
+            <h1 className="text-white font-bold text-xl">
+              Indra
+            </h1>
+
+            <p className="text-secondary text-xs">
+              Web Developer
+            </p>
+          </div>
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              onClick={() => setActive(nav.title)}
-              className={`${
-                active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+            <li key={nav.id}>
+              <a
+                href={`#${nav.id}`}
+                className={`relative font-medium text-[17px] transition-all duration-300 hover:text-white ${
+                  active === nav.id
+                    ? "text-white"
+                    : "text-secondary"
+                }`}
+              >
+                {nav.title}
+
+                <span
+                  className={`absolute left-0 -bottom-2 h-[2px] rounded-full bg-[#915EFF] transition-all duration-300 ${
+                    active === nav.id
+                      ? "w-full"
+                      : "w-0"
+                  }`}
+                />
+              </a>
             </li>
           ))}
         </ul>
 
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        {/* Mobile Menu */}
+        <div className="lg:hidden flex items-center">
           <img
             src={toggle ? close : menu}
-            alt="Menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
+            alt="menu"
+            className="w-7 h-7 cursor-pointer"
             onClick={() => setToggle(!toggle)}
           />
 
           <div
             className={`${
               toggle ? "flex" : "hidden"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl z-10`}
+            } absolute top-20 right-4 min-w-[180px] rounded-2xl bg-[#151030] p-6 shadow-xl`}
           >
-            <ul className="list-none flex flex-col gap-4">
+            <ul className="flex flex-col gap-5">
               {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  onClick={() => {
-                    setToggle(false);
-                    setActive(nav.title);
-                  }}
-                  className={`${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  } text-[16px] font-medium cursor-pointer`}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                <li key={nav.id}>
+                  <a
+                    href={`#${nav.id}`}
+                    onClick={() => setToggle(false)}
+                    className={`transition duration-300 ${
+                      active === nav.id
+                        ? "text-white"
+                        : "text-secondary"
+                    } hover:text-white`}
+                  >
+                    {nav.title}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
         </div>
+
       </div>
     </nav>
   );
